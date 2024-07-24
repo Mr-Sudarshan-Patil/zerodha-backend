@@ -18,7 +18,14 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 app.use(bodyParser.json());
-app.use(cors());
+
+const corsConfig = {
+  origin: "*",
+  credential: true,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+}
+
+app.use(cors(corsConfig));
 app.use('/auth', authRouter)
 
 // fetch data from the data base
