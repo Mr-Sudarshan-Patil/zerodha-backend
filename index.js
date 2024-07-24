@@ -30,24 +30,22 @@ mongoose.connect(mongo_url)
 
 app.use(bodyParser.json());
 
-const allowedOrigins = [
-  'https://zerodha-dashboard-bice.vercel.app',
-  'https://zerodha-frontend.vercel.app'
-];
 
 const corsOptions = {
-  origin: function (origin, callback) {
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: ["https://zerodha-dashboard-bice.vercel.app", "https://zerodha-frontend.vercel.app"],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"]
 };
 
 app.use(cors(corsOptions));
+
+const corsOptions2 = {
+  origin: "https://zerodha-dashboard-bice.vercel.app",
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE"]
+};
+
+app.use(cors(corsOptions2));
 
 
 app.options("", cors(corsConfig));
