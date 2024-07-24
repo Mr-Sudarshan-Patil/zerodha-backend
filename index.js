@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 app.use(bodyParser.json());
 
 const corsConfig = {
-  origin: "https://zerodha-backend.vercel.app",
+  origin: "",
   credential: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
 }
