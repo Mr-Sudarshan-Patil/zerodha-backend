@@ -30,23 +30,11 @@ mongoose.connect(mongo_url)
 
 app.use(bodyParser.json());
 
-
-const corsOptions = {
-  origin: "https://zerodha-dashboard-bice.vercel.app",
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE"]
-};
-
-app.use(cors(corsOptions));
-
-const corsOptions2 = {
-  origin: "https://zerodha-dashboard-bice.vercel.app",
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE"]
-};
-
-app.use(cors(corsOptions2));
-
+const corsConfig = {
+  origin: ["https://zerodha-dashboard-bice.vercel.app", "https://zerodha-frontend.vercel.app"],
+  credential: true,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+}
 
 app.options("", cors(corsConfig));
 app.use(cors(corsConfig));
