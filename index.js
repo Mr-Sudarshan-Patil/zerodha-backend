@@ -17,6 +17,17 @@ const PORT = process.env.PORT || 3000;
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
+
+
+const mongo_url =  process.env.MONGO_URL;
+
+mongoose.connect(mongo_url)
+    .then(()=>{
+        console.log('MongoDB connected..');
+    }).catch((err)=>{
+        console.log('MongoDB connection Error:', err);
+    })
+
 app.use(bodyParser.json());
 
 const corsConfig = {
