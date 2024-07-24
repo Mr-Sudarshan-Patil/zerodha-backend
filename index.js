@@ -12,7 +12,7 @@ require('dotenv').config();
 require('./model/db');
 
 
-const PORT = process.env.PORT || 3002;
+const PORT = 3000;
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -41,6 +41,6 @@ app.get('/allPositions', async(req, res)=>{
 
 app.use(cookieParser());
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Example app listening on port ${PORT}`)
 })
