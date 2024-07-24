@@ -32,7 +32,7 @@ app.use(bodyParser.json());
 
 
 const corsOptions = {
-  origin: ["https://zerodha-dashboard-bice.vercel.app", "https://zerodha-frontend.vercel.app"],
+  origin: "https://zerodha-dashboard-bice.vercel.app",
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"]
 };
