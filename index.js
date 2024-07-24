@@ -31,7 +31,7 @@ mongoose.connect(mongo_url)
 app.use(bodyParser.json());
 
 const corsConfig = {
-  origin: "",
+  origin: "https://zerodha-backend.vercel.app/",
   credential: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
 }
