@@ -7,9 +7,9 @@ const authRouter = require("./Routes/AuthRouter");
 const { PositionsModel } = require('./model/PositionsModel');
 const cookieParser = require("cookie-parser");
 
-const {HoldingModel, HoldingsModel} = require("./model/HoldingsModel");
+const {HoldingsModel} = require("./model/HoldingsModel");
 require('dotenv').config();
-require('./model/db');
+// require('./model/db');
 
 
 const PORT = process.env.PORT || 3000;
